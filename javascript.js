@@ -1,9 +1,9 @@
 let books = [];
 
 function Book(title, author, pages) {
-    self.title = title;
-    self.author = author;
-    self.pages = pages;
+    this.title = title;
+    this.author = author;
+    this.pages = pages;
 }
 
 function addBookToBooks() {
@@ -11,7 +11,14 @@ function addBookToBooks() {
     let author = prompt("Enter author: ");
     let pages = prompt("Enter pages: ");
     const book = new Book(title, author, pages);
-    books.push();
+    books.push(book);
+}
+
+function displayBooks() {
+    for (i = 0; i < books.length; i++) {
+        //display books[i].name, etc.
+    }
+
 }
 
 addBookToBooks();
