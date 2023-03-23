@@ -1,5 +1,6 @@
-const bookList = document.querySelector('#book-list');
-let books = [];             // Stores all Book objects
+const bookList = document.querySelector('#book-list');      //Book list container
+const newBookButton = document.querySelector('#new-book-button');       //Add Book button
+let books = [];   // Stores all Book objects
 function Book(title, author, pages) {
     this.title = title;
     this.author = author;
@@ -21,6 +22,10 @@ function displayBooks() {
         const bookTitle = document.createElement('div');
         const bookAuthor = document.createElement('div');
         const bookPages = document.createElement('div');
+        newBook.classList.add("book");
+        bookTitle.classList.add("book-title");
+        bookAuthor.classList.add("book-author");
+        bookPages.classList.add("book-pages");
         bookList.append(newBook);                   //Add divs to newBook div in HTML
         newBook.appendChild(bookTitle);
         newBook.appendChild(bookAuthor);
@@ -31,6 +36,13 @@ function displayBooks() {
     }
 }
 
-addBookToBooks();
+newBookButton.addEventListener('click', () => {
+    addBookToBooks();
+    displayBooks();
+});
+
+
+
+
 displayBooks();
 
