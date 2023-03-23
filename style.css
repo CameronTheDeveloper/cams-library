@@ -9,14 +9,36 @@
     height: 100vh;
 }
 
+/* Header */
 #header {
     display: grid;
-    background-color: rgb(165, 186, 45);
-    justify-items: center;
-    align-items: center;
+    grid-template-columns: 1fr 12fr 1fr;
+    background-color: rgb(218, 186, 143);
     font-size: 20px;
 }
 
+#header-title {
+    justify-self: center;
+    align-self: center;
+}
+
+/* Add book button */
+#new-book-button {
+    align-self: end;
+    justify-self: center;
+    margin: 10px;
+}
+
+#new-book-button button {
+    grid-column: -1fr;
+    border-radius: 20px;
+    height: 3rem;
+    width: 7rem;
+    font-size: 1rem;
+    font-weight: 700;
+}
+
+/* Body */
 #body {
     display: grid;
     grid-template-columns: 10fr 1fr;
@@ -27,16 +49,13 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
     font-size: 1.5rem;
+    gap: 1rem;
 }
 
 .book {
-    background-color: white;
-    border-color: 5px solid black;
+    border: 5px solid black;
+    justify-content: center;
     display: grid;
     grid-template-rows: 1fr 1fr 1fr;
     height: 200px;
-}
-
-#new-book-button {
-    grid-column: -1fr;
 }
