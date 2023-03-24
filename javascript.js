@@ -11,9 +11,9 @@ function Book(title, author, pages) {
 
 // Add book to 'books' array
 function addBookToBooks() {
-    let title = addBookForm.getElementById('book-title').value;
-    let author = addBookForm.getElementById('book-author').value;
-    let pages = addBookForm.getElementById('book-pages').value;
+    let title = document.getElementById('book-title').value;
+    let author = document.getElementById('book-author').value;
+    let pages = document.getElementById('book-pages').value;
     const book = new Book(title, author, pages);
     books.push(book);
     index = displayBooks(index);
