@@ -53,6 +53,7 @@ newBookButton.addEventListener('click', () => {
 addBookForm.addEventListener('submit', (event) => {
     event.preventDefault();
     addBookToBooks();
+    addBookForm.style.display = 'none';
 });
 
 
