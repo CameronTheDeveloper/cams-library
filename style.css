@@ -31,8 +31,6 @@ button {
     align-self: end;
     justify-self: center;
     margin: 10px;
-
-
 }
 
 #new-book-button button {
@@ -84,4 +82,35 @@ button {
     /* Starts out invisible */
     display: none;
     position: fixed;
+    list-style-type: none;
+    left: 35%;
+    top: 35%;
 }
+
+#add-book-form fieldset {
+    border-radius: 35px;
+    padding: 16px;
+    display: grid;
+    grid-template-columns: 20fr 1fr;
+}
+
+#remove-book-form {
+    width: 25px;
+    border-radius: 12px;
+    justify-self: end;
+    margin-bottom: 12px;
+}
+
+/* #remove-book-form:hover {
+    background-color: rgb(255, 59, 59);
+} */
+
+#add-book-form li {
+    margin: 8px;
+    grid-column: 1/2;
+}
+
+
+/* #add-book-form input[type="submit"]:hover {
+    background-color: rgb(100, 236, 100);
+} */
