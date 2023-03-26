@@ -42,15 +42,30 @@ function displayBooks(index) {
         bookTitle.innerHTML = 'Title: ' + books[index].title;       // Add content inside each div
         bookAuthor.innerHTML = 'Author: ' + books[index].author;
         bookPages.innerHTML = 'Pages: ' + books[index].pages;
-        if (books[index].read) {    //Book read
-            bookRead.innerHTML = 'Read';
-        } else {
-            bookRead.innerHTML = 'Unread';
-        }
+        createCheckBox(bookRead);
+        // if (books[index].read) {    //Book read
+        //     bookRead.innerHTML = 'Read';
+        // } else {
+        //     bookRead.innerHTML = 'Unread';
+        // }
 
         index++;
     }
     return index;
+}
+
+// Add a "read" checkbox on each created book
+function createCheckBox(bookRead) {
+    let checkLabel = document.createElement('label');
+    let checkBox = document.createElement('input');
+
+    checkLabel.for = 'read';
+    checkLabel.innerHTML = 'Read: ';
+    checkBox.type = 'checkbox';
+    checkBox.name = 'read';
+    checkBox.id = 'read';
+    bookRead.appendChild(checkLabel);
+    bookRead.appendChild(checkBox);
 }
 
 newBookButton.addEventListener('click', () => {
