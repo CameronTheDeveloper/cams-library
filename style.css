@@ -31,12 +31,13 @@ button {
     align-self: end;
     justify-self: center;
     margin: 10px;
+
+
 }
 
 #new-book-button button {
     border-radius: 20px;
     height: 3rem;
-    font-size: 1rem;
     font-weight: 700;
 }
 
@@ -75,6 +76,7 @@ button {
 
 .remove-button button:hover {
     color: red;
+    font-weight: 900;
 }
 
 /* Add book form */
