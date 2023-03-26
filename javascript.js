@@ -51,6 +51,15 @@ function displayBooks(index) {
         createCheckBox(index, bookRead);   //Create Read checkbox in book
         removeButton.innerHTML = "Remove";
 
+        removeButton.addEventListener('click', () => {
+            newBook.remove();
+
+            const bookIndex = books.indexOf(books(index));
+
+            if (bookIndex > -1) {
+                books.splice(bookIndex, 1);
+            }
+        });
 
         index++;
     }
