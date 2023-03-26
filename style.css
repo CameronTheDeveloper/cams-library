@@ -63,7 +63,7 @@ button {
     border: 5px solid black;
     justify-content: center;
     display: grid;
-    grid-template-rows: 2fr 2fr 2fr 2fr 1fr;
+    grid-template-rows: 3fr 2fr 2fr 2fr 1fr;
     height: 200px;
     margin: 1rem;
 }
