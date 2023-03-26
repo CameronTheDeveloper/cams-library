@@ -48,13 +48,9 @@ function displayBooks(index) {
         bookTitle.innerHTML = books[index].title;       // Add content inside each div
         bookAuthor.innerHTML = 'By: ' + books[index].author;
         bookPages.innerHTML = 'Pages: ' + books[index].pages;
-        createCheckBox(bookRead);   //Create Read checkbox in book
+        createCheckBox(index, bookRead);   //Create Read checkbox in book
         removeButton.innerHTML = "Remove";
-        // if (books[index].read) {    //Book read
-        //     bookRead.innerHTML = 'Read';
-        // } else {
-        //     bookRead.innerHTML = 'Unread';
-        // }
+
 
         index++;
     }
@@ -62,7 +58,7 @@ function displayBooks(index) {
 }
 
 // Add a "read" checkbox on each created book
-function createCheckBox(bookRead) {
+function createCheckBox(index, bookRead) {
     let checkLabel = document.createElement('label');
     let checkBox = document.createElement('input');
 
@@ -73,6 +69,9 @@ function createCheckBox(bookRead) {
     checkBox.id = 'read';
     bookRead.appendChild(checkLabel);
     bookRead.appendChild(checkBox);
+    if (books[index].read) {    //Book read
+        checkBox.checked = true;
+    }
 }
 
 newBookButton.addEventListener('click', () => {
