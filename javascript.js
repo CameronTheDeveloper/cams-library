@@ -29,20 +29,27 @@ function displayBooks(index) {
         const bookAuthor = document.createElement('div');
         const bookPages = document.createElement('div');
         const bookRead = document.createElement('div');
+        const removeButtonDiv = document.createElement('div');
+        const removeButton = document.createElement('button');
         newBook.classList.add('book' /* + index*/);
         bookTitle.classList.add('title');
         bookAuthor.classList.add('author');
         bookPages.classList.add('pages');
         bookRead.classList.add('read');
+        removeButtonDiv.classList.add('remove-button');
         bookList.append(newBook);
         newBook.appendChild(bookTitle);
         newBook.appendChild(bookAuthor);
         newBook.appendChild(bookPages);
         newBook.appendChild(bookRead);
-        bookTitle.innerHTML = 'Title: ' + books[index].title;       // Add content inside each div
-        bookAuthor.innerHTML = 'Author: ' + books[index].author;
+        removeButtonDiv.appendChild(removeButton);
+        newBook.appendChild(removeButtonDiv);
+
+        bookTitle.innerHTML = books[index].title;       // Add content inside each div
+        bookAuthor.innerHTML = 'By: ' + books[index].author;
         bookPages.innerHTML = 'Pages: ' + books[index].pages;
-        createCheckBox(bookRead);
+        createCheckBox(bookRead);   //Create Read checkbox in book
+        removeButton.innerHTML = "Remove";
         // if (books[index].read) {    //Book read
         //     bookRead.innerHTML = 'Read';
         // } else {
