@@ -52,10 +52,11 @@
 }
 
 .book {
+    padding: 16px;
     border: 5px solid black;
     justify-content: center;
     display: grid;
-    grid-template-rows: 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr;
     height: 200px;
     margin: 1rem;
 }
@@ -66,3 +67,5 @@
     display: none;
     position: fixed;
 }
+
+/* Style the form, Book read chec, delete button on each book */
