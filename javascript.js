@@ -13,7 +13,6 @@ function Book(title, author, pages, read) {
 
 // Add book to 'books' array
 function addBookToBooks() {
-    console.log("Working 1");
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
     let pages = document.getElementById('book-pages').value;
@@ -26,7 +25,6 @@ function addBookToBooks() {
 // Display the books by looping through 'books' array
 function displayBooks(index) {
     while (index < books.length) {
-        console.log("Working");
         const newBook = document.createElement('div');
         const bookTitle = document.createElement('div');
         const bookAuthor = document.createElement('div');
@@ -88,7 +86,6 @@ function createCheckBox(index, bookRead) {
 
 //Add book button
 newBookButton.addEventListener('click', () => {
-    console.log("Working 5");
     if (addBookForm.style.display == 'none') {
         addBookForm.style.display = 'grid';
     } else {
@@ -106,9 +103,9 @@ removeFormButton.addEventListener('click', (event) => {
 // Form submit button
 addBookForm.addEventListener('submit', (event) => {
     event.preventDefault();
-    console.log("Working 2");
     addBookToBooks();
-    addBookForm.style.display = 'none';     //This function isn't working
+    event.target.reset();
+    addBookForm.style.display = 'none';
 
 });
 
