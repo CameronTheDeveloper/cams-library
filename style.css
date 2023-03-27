@@ -77,6 +77,13 @@ button {
     font-weight: 900;
 }
 
+/* Checkbox */
+#add-book-form .form-checkbox,
+.book .read {
+    gap: 20px;
+}
+
+
 /* Add book form */
 #add-book-form {
     /* Starts out invisible */
@@ -94,12 +101,22 @@ button {
     display: grid;
 }
 
+#add-book-form .form-checkbox,
+#add-book-form .form-buttons,
+.book .read {
+    display: flex;
+}
+
+/* Submit and reset buttons*/
+#add-book-form .form-buttons {
+    justify-content: space-between;
+}
+
 /* Button*/
 #remove-book-form {
     width: 25px;
     border-radius: 12px;
     justify-self: end;
-    margin-bottom: 12px;
 }
 
 #remove-book-form:hover {
@@ -110,6 +127,27 @@ button {
     margin: 8px;
 }
 
-/* #add-book-form input[type="submit"]:hover {
+/* Form submit button */
+.form-buttons button:nth-child(1):hover {
     background-color: rgb(100, 236, 100);
+}
+
+/* Form reset button */
+.form-buttons button:nth-child(2):hover {
+    background-color: rgb(237, 96, 96);
+}
+
+input[type="checkbox"] {
+    width: 25px;
+    height: 25px;
+}
+
+input[type="checkbox"]:hover {
+    cursor: pointer;
+    border: solid rgb(0, 0, 0);
+}
+
+/* input[type="text"]:active,
+input[type="number"]:active {
+    border-color: green;
 } */
