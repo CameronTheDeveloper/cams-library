@@ -1,6 +1,7 @@
 const bookList = document.querySelector('#book-list');              // Book list container
 const newBookButton = document.querySelector('#new-book-button');   // Add Book button
 const addBookForm = document.querySelector('#add-book-form');       // Form that adds books
+const removeFormButton = document.querySelector('#remove-book-form');
 let books = [];   // Stores all Book objects
 let index = 0;    // books index
 function Book(title, author, pages, read) {
@@ -12,6 +13,7 @@ function Book(title, author, pages, read) {
 
 // Add book to 'books' array
 function addBookToBooks() {
+    console.log("Working 1");
     let title = document.getElementById('book-title').value;
     let author = document.getElementById('book-author').value;
     let pages = document.getElementById('book-pages').value;
@@ -24,6 +26,7 @@ function addBookToBooks() {
 // Display the books by looping through 'books' array
 function displayBooks(index) {
     while (index < books.length) {
+        console.log("Working");
         const newBook = document.createElement('div');
         const bookTitle = document.createElement('div');
         const bookAuthor = document.createElement('div');
@@ -83,18 +86,30 @@ function createCheckBox(index, bookRead) {
     }
 }
 
+//Add book button
 newBookButton.addEventListener('click', () => {
+    console.log("Working 5");
     if (addBookForm.style.display == 'none') {
-        addBookForm.style.display = 'block';
+        addBookForm.style.display = 'grid';
     } else {
         addBookForm.style.display = 'none';
     }
+
 });
 
+// Remove form button
+removeFormButton.addEventListener('click', (event) => {
+    event.preventDefault();
+    addBookForm.style.display = 'none';
+});
+
+// Form submit button
 addBookForm.addEventListener('submit', (event) => {
     event.preventDefault();
+    console.log("Working 2");
     addBookToBooks();
-    addBookForm.style.display = 'none';
+    addBookForm.style.display = 'none';     //This function isn't working
+
 });
 
 

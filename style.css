@@ -80,20 +80,21 @@ button {
 /* Add book form */
 #add-book-form {
     /* Starts out invisible */
-    display: none;
+    /* display: none; */
     position: fixed;
     list-style-type: none;
     left: 35%;
     top: 35%;
-}
-
-#add-book-form fieldset {
+    border: 5px solid rgb(103, 103, 103);
     border-radius: 35px;
-    padding: 16px;
-    display: grid;
-    grid-template-columns: 20fr 1fr;
+    padding: 15px;
 }
 
+#add-book-form form {
+    display: grid;
+}
+
+/* Button*/
 #remove-book-form {
     width: 25px;
     border-radius: 12px;
@@ -101,15 +102,13 @@ button {
     margin-bottom: 12px;
 }
 
-/* #remove-book-form:hover {
+#remove-book-form:hover {
     background-color: rgb(255, 59, 59);
-} */
-
-#add-book-form li {
-    margin: 8px;
-    grid-column: 1/2;
 }
 
+#add-book-form div {
+    margin: 8px;
+}
 
 /* #add-book-form input[type="submit"]:hover {
     background-color: rgb(100, 236, 100);
