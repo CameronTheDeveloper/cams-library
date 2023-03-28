@@ -63,7 +63,7 @@ button {
     margin: 32px;
     padding: 16px;
     border: 5px solid black;
-    justify-content: center;
+
     display: grid;
     grid-template-rows: 3fr 2fr 2fr 2fr 1fr;
     height: 400px;
@@ -73,6 +73,7 @@ button {
 .book .title {
     font-size: 1.8rem;
     font-weight: 900;
+    justify-self: center;
 }
 
 .remove-button {
