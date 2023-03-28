@@ -2,7 +2,6 @@ const bookList = document.querySelector('#book-list');              // Book list
 const newBookButton = document.querySelector('#new-book-button');   // Add Book button
 const addBookForm = document.querySelector('#add-book-form');       // Form that adds books
 const removeFormButton = document.querySelector('#remove-book-form');
-const checkBox = document.querySelector('#book-read');
 let books = [];   // Stores all Book objects
 let index = 0;    // books index
 function Book(title, author, pages, read) {
@@ -38,7 +37,7 @@ function displayBooks(index) {
         const bookRead = document.createElement('div');
         const removeButtonDiv = document.createElement('div');
         const removeButton = document.createElement('button');
-        newBook.classList.add('book' /* + index*/);
+        newBook.classList.add('book');
         bookTitle.classList.add('title');
         bookAuthor.classList.add('author');
         bookPages.classList.add('pages');
@@ -68,6 +67,8 @@ function displayBooks(index) {
             }
         });
 
+
+
         index++;
     }
     return index;
@@ -88,6 +89,11 @@ function createCheckBox(index, bookRead) {
     if (books[index].read) {    //Book read
         checkBox.checked = true;
     }
+
+    //Toggle read status 
+    checkBox.addEventListener('change', () => {
+        books[index].toggleRead();
+    });
 }
 
 //Add book button
@@ -100,10 +106,7 @@ newBookButton.addEventListener('click', () => {
 
 });
 
-//Toggle read status 
-checkBox.addEventListener('change', function () {
-    books[index].toggleRead;
-});
+
 
 // Remove form button
 removeFormButton.addEventListener('click', (event) => {
