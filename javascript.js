@@ -2,6 +2,7 @@ const bookList = document.querySelector('#book-list');              // Book list
 const newBookButton = document.querySelector('#new-book-button');   // Add Book button
 const addBookForm = document.querySelector('#add-book-form');       // Form that adds books
 const removeFormButton = document.querySelector('#remove-book-form');
+const checkBox = document.querySelector('#book-read');
 let books = [];   // Stores all Book objects
 let index = 0;    // books index
 function Book(title, author, pages, read) {
@@ -10,6 +11,11 @@ function Book(title, author, pages, read) {
     this.pages = pages;
     this.read = read;
 }
+
+//Change read status of book
+Book.prototype.toggleRead = function () {
+    this.read = !this.read;
+};
 
 // Add book to 'books' array
 function addBookToBooks() {
@@ -92,6 +98,11 @@ newBookButton.addEventListener('click', () => {
         addBookForm.style.display = 'none';
     }
 
+});
+
+//Toggle read status 
+checkBox.addEventListener('change', function () {
+    books[index].toggleRead;
 });
 
 // Remove form button
