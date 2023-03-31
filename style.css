@@ -106,12 +106,12 @@ button {
     display: none;
     position: fixed;
     list-style-type: none;
-    left: 35%;
-    top: 35%;
+    left: 1%;
+    top: 17.5%;
     border: 5px solid rgb(103, 103, 103);
     border-radius: 35px;
     padding: 15px;
-    background-color: rgb(236, 183, 115, 0.8);
+    background-color: rgb(236, 183, 115, 0.98);
 }
 
 #add-book-form label {
