@@ -4,17 +4,21 @@ const addBookForm = document.querySelector('#add-book-form');       // Form that
 const removeFormButton = document.querySelector('#remove-book-form');
 let books = [];   // Stores all Book objects
 let index = 0;    // books index
-function Book(title, author, pages, read) {
-    this.title = title;
-    this.author = author;
-    this.pages = pages;
-    this.read = read;
+class Book {
+    constructor(title, author, pages, read) {
+        this.title = title;
+        this.author = author;
+        this.pages = pages;
+        this.read = read;
+    }
+
+    //Change read status of book
+    toggleRead = () => {
+        this.read = !this.read;
+    };
 }
 
-//Change read status of book
-Book.prototype.toggleRead = function () {
-    this.read = !this.read;
-};
+
 
 // Add book to 'books' array
 function addBookToBooks() {
@@ -59,15 +63,12 @@ function displayBooks(index) {
 
         removeButton.addEventListener('click', () => {
             newBook.remove();
-
             const bookIndex = books.indexOf(books(index));
 
             if (bookIndex > -1) {
                 books.splice(bookIndex, 1);
             }
         });
-
-
 
         index++;
     }
@@ -103,10 +104,7 @@ newBookButton.addEventListener('click', () => {
     } else {
         addBookForm.style.display = 'none';
     }
-
 });
-
-
 
 // Remove form button
 removeFormButton.addEventListener('click', (event) => {
@@ -120,7 +118,6 @@ addBookForm.addEventListener('submit', (event) => {
     addBookToBooks();
     event.target.reset();
     addBookForm.style.display = 'none';
-
 });
 
 
